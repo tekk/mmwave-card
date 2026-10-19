@@ -161,6 +161,9 @@ export class MMWaveCardEditor extends LitElement implements LovelaceCardEditor {
           delete updated[field.key];
         }
       }
+      if (updated.presence_entity === 'binary_sensor.r60abd1_presence' && newModel !== 'r60abd1') {
+        delete updated.presence_entity;
+      }
       if (updated.polygon_entity === 'text.r60abd1_polygon_config' && newModel !== 'r60abd1') {
         delete updated.polygon_entity;
       }
